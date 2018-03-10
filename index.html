@@ -19,15 +19,16 @@
             <div class="col col-12 text-center rounded border border-white">
                 <h1>CURRENT WORD</h1>
                 <P><small>PRESS ANY KEY TO GET STARTED</small></P>
+                <h2 id="currWord"></h2>
             </div>
         </div>
         <div class="row no-gutters main">
             <div class="col col-12 order-last order-md-first col-md-4 text-center rounded border border-white">
                 <h1 class="text-md-left">HANGMAN <span class="lightfont">| COLORS</span></h1>
                 <P class="text-md-left"><small>CONTROL PANEL</small></P>
-                <h2 class="text-left">WINS:</h2>
-                <h2 class="text-left">NUMBER OF GUESSES REMAINING:</h2>
-                <h2 class="text-left">LETTERS ALREADY GUESSED:</h2>
+                <h2 class="text-left">WINS:<span id="wins"></span></h2>
+                <h2 class="text-left">NUMBER OF GUESSES REMAINING:<span id="mylives"></span></h2>
+                <h2 class="text-left">LETTERS ALREADY GUESSED:<span id="guessed"></span></h2>
             </div>
             <div class="col col-12 col-md-7 ml-auto text-center rounded border border-white">
                 <h1>HANGMAN <span class="lightfont">| COLORS</span></h1>
@@ -35,13 +36,10 @@
             </div>
         </div>
     </div>
-
-    <script>
-        
-    </script>
-
+    <script src="assets/javascript/game.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
 </body>
 </html>

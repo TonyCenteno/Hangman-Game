@@ -35,3 +35,12 @@ h1, h2 {
 .lightfont {
     font-weight: 400;
 }
+#currWord {
+    font-weight: 400;
+    font-size: 24px;
+    padding-bottom: 15px;
+    margin-top: -33px;
+}
+span #myLives {
+    color:red;
+}
