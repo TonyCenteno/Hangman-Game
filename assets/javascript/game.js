@@ -5,14 +5,14 @@ var wins = 0;
 var lives = " " + 6;
 var wrongLetter = [];
 var userGuesses = [];
-var randomWord = [];
+var randomWord  = [];
 var correct = 0;
 // randomly select a word from the list
 
 function starterGame(){
     underScores = [];
     randomWord = colors[Math.floor(Math.random() * colors.length)];
-    console.log('random Word =' + randomWord);
+    console.log('random Word =' + randomWord.toUpperCase());
     
     for (var i = 0; i < randomWord.length; i++)
     {
@@ -43,32 +43,52 @@ function goback()
 {   
     document.getElementById("winner").style.display = "none";
     document.getElementById("loser").style.display = "none";
+    replacingImage6();
     starterGame();
 }
+function replacingImage6()
+    {
+        document.getElementById("hmImage").src="assets/images/hangman1.png";
+    }
 function replacingImage5()
     {
-        document.getElementById("hmImage").src="assets/images/hangman.svg"
+        document.getElementById("hmImage").src="assets/images/hangman2.png";
     }
 function replacingImage4()
     {
-        document.getElementById("hmImage").src="assets/images/hangman.svg"
+        document.getElementById("hmImage").src="assets/images/hangman3.png";
     }
 function replacingImage3()
     {
-        document.getElementById("hmImage").src="assets/images/hangman.svg"
+        document.getElementById("hmImage").src="assets/images/hangman4.png";
     }
 function replacingImage2()
     {
-        document.getElementById("hmImage").src="assets/images/hangman.svg"
+        document.getElementById("hmImage").src="assets/images/hangman5.png";
     }
 function replacingImage1()
     {
-        document.getElementById("hmImage").src="assets/images/hangman.svg"
+        document.getElementById("hmImage").src="assets/images/hangman6.png";
     }
+function replacingImage0()
+    {
+        document.getElementById("hmImage").src="assets/images/hangman7.png";
+    }
+
+function timeOutImg()
+{
+    document.getElementById("loser").style.display = "inline-block";
+}
+
 
 document.onkeyup = function (event)
 {
-    userGuesses = event.key;
+    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+      
+    //userGuesses = event.key.toUpperCase();
+    userGuesses = event.key
     
     if(randomWord.indexOf(userGuesses) > -1) 
     {
@@ -90,34 +110,34 @@ document.onkeyup = function (event)
      if(lives > 1 && lives == 6)
      {
         lives--;
-        replacingImage5()
+        replacingImage5();
      }
      else if(lives > 1 && lives == 5)
      {
         lives--;
-        replacingImage4()
+        replacingImage4();
      }
      else if(lives > 1 && lives == 4)
      {
         lives--;
-        replacingImage3()
+        replacingImage3();
      }
      else if(lives > 1 && lives == 3)
      {
         lives--;
-        replacingImage2()
+        replacingImage2();
      }
      else if(lives > 1 && lives == 2)
      {
         lives--;
-        replacingImage1()
+        replacingImage1();
      }
-     else if(lives > 1 && lives == 1)
-     {
+     else {
         lives--;
-     }
-     else 
-     {
+        //window.setTimeout(replacingImage0(), 6000);
+        replacingImage0();
+        //setTimeout(replacingImage0(), 3000);
+        //window.setTimeout(timeOutImg(), 3000);
         document.getElementById("loser").style.display = "inline-block";
      }
      document.getElementById("mylives").innerHTML = " " + " " + lives;
