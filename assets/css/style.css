@@ -51,7 +51,8 @@ span #myLives {
     color:red;
 }
 #loser, #winner {
-    padding-top:30%;
+    margin: auto;
+    padding-top: 220px;
     background-color:rgba(0, 0, 0, 0.85);
     height: 100%;
     width: 100%;

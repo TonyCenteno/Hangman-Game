@@ -1,5 +1,5 @@
 // create a list of words
-var colors = ["red", "green", "blue", "orange", "purple", "yellow", "gray", "violet", "turquoise", "magenta", "cyan", "brown", "peach", "teal", "pink"];
+var colors = ["red", "green", "blue", "orange", "purple", "yellow", "grey", "violet", "turquoise", "magenta", "cyan", "brown", "peach", "teal", "pink"];
 var underScores = [];
 var wins = 0;
 var lives = " " + 6;
@@ -7,8 +7,6 @@ var wrongLetter = [];
 var userGuesses = [];
 var randomWord = [];
 var correct = 0;
-var img = new Image();
-var div = document.getElementById("hmImage")
 // randomly select a word from the list
 
 function starterGame(){
@@ -20,7 +18,7 @@ function starterGame(){
     {
         underScores.push(" _ ");
     }
-
+    document.getElementById("mywins").innerHTML = " " + " " + wins;
     document.getElementById("currWord").innerHTML = underScores.join(" ");
     console.log(underScores);
     wrongLetter = [];
@@ -47,6 +45,26 @@ function goback()
     document.getElementById("loser").style.display = "none";
     starterGame();
 }
+function replacingImage5()
+    {
+        document.getElementById("hmImage").src="assets/images/hangman.svg"
+    }
+function replacingImage4()
+    {
+        document.getElementById("hmImage").src="assets/images/hangman.svg"
+    }
+function replacingImage3()
+    {
+        document.getElementById("hmImage").src="assets/images/hangman.svg"
+    }
+function replacingImage2()
+    {
+        document.getElementById("hmImage").src="assets/images/hangman.svg"
+    }
+function replacingImage1()
+    {
+        document.getElementById("hmImage").src="assets/images/hangman.svg"
+    }
 
 document.onkeyup = function (event)
 {
@@ -60,7 +78,7 @@ document.onkeyup = function (event)
         {
             underScores[i] = userGuesses;
             document.getElementById("currWord").innerHTML = underScores.join(" ");
-            correct++;        
+            correct++;
             win();
         }
      }
@@ -69,11 +87,36 @@ document.onkeyup = function (event)
     {
      wrongLetter.push(userGuesses);
      console.log(wrongLetter)
-     if(lives > 1)
+     if(lives > 1 && lives == 6)
+     {
+        lives--;
+        replacingImage5()
+     }
+     else if(lives > 1 && lives == 5)
+     {
+        lives--;
+        replacingImage4()
+     }
+     else if(lives > 1 && lives == 4)
+     {
+        lives--;
+        replacingImage3()
+     }
+     else if(lives > 1 && lives == 3)
+     {
+        lives--;
+        replacingImage2()
+     }
+     else if(lives > 1 && lives == 2)
+     {
+        lives--;
+        replacingImage1()
+     }
+     else if(lives > 1 && lives == 1)
      {
         lives--;
      }
-     else
+     else 
      {
         document.getElementById("loser").style.display = "inline-block";
      }
@@ -82,7 +125,8 @@ document.onkeyup = function (event)
     }
 }
 
-document.getElementById("mywins").innerHTML = " " + " " + wins;
+
+//document.getElementById("loser").style.display = "inline-block";
 starterGame();
 
 // show the empty spaces for each letter with underscores
