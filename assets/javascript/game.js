@@ -83,9 +83,6 @@ function timeOutImg()
 
 document.onkeyup = function (event)
 {
-    var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-        't', 'u', 'v', 'w', 'x', 'y', 'z'];
       
     //userGuesses = event.key.toUpperCase();
     userGuesses = event.key
@@ -96,50 +93,65 @@ document.onkeyup = function (event)
      {
         if(randomWord[i] === userGuesses)
         {
+            if(userGuesses === underScores[i])
+            {
+                console.log("false");
+            }
+            else 
+            {
             underScores[i] = userGuesses;
             document.getElementById("currWord").innerHTML = underScores.join(" ");
             correct++;
             win();
+            }
         }
      }
     }
     else
     {
-     wrongLetter.push(userGuesses);
-     console.log(wrongLetter)
-     if(lives > 1 && lives == 6)
-     {
-        lives--;
-        replacingImage5();
-     }
-     else if(lives > 1 && lives == 5)
-     {
-        lives--;
-        replacingImage4();
-     }
-     else if(lives > 1 && lives == 4)
-     {
-        lives--;
-        replacingImage3();
-     }
-     else if(lives > 1 && lives == 3)
-     {
-        lives--;
-        replacingImage2();
-     }
-     else if(lives > 1 && lives == 2)
-     {
-        lives--;
-        replacingImage1();
-     }
-     else {
-        lives--;
-        //window.setTimeout(replacingImage0(), 6000);
-        replacingImage0();
-        //setTimeout(replacingImage0(), 3000);
-        //window.setTimeout(timeOutImg(), 3000);
-        document.getElementById("loser").style.display = "inline-block";
-     }
+        if(userGuesses[i] === wrongLetter[i] && userGuesses == wrongLetter)
+            {
+                console.log("false gay");
+            }
+        else
+        {
+            wrongLetter.push(userGuesses);
+            console.log(wrongLetter)
+            if(lives > 1 && lives == 6)
+            {
+                lives--;
+                replacingImage5();
+            }
+            else if(lives > 1 && lives == 5)
+            {
+                lives--;
+                replacingImage4();
+            }
+            else if(lives > 1 && lives == 4)
+            {
+                lives--;
+                replacingImage3();
+            }
+            else if(lives > 1 && lives == 3)
+            {
+                lives--;
+                replacingImage2();
+            }
+            else if(lives > 1 && lives == 2)
+            {
+                lives--;
+                replacingImage1();
+            }
+            else {
+                lives--;
+                //window.setTimeout(replacingImage0(), 6000);
+                replacingImage0();
+                //setTimeout(replacingImage0(), 3000);
+                //window.setTimeout(timeOutImg(), 3000);
+                document.getElementById("loser").style.display = "inline-block";
+            }
+        }
+     
      document.getElementById("mylives").innerHTML = " " + " " + lives;
      document.getElementById("guessed").innerHTML = " " + " " + wrongLetter.join(" ");
     }
