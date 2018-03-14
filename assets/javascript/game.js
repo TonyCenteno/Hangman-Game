@@ -111,7 +111,7 @@ document.onkeyup = function (event)
     {
         if(userGuesses[i] === wrongLetter[i] && userGuesses == wrongLetter)
             {
-                console.log("false gay");
+                console.log("false");
             }
         else
         {
