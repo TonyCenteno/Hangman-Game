@@ -83,7 +83,7 @@ function timeOutImg()
 
 document.onkeyup = function (event)
 {
-      
+    
     //userGuesses = event.key.toUpperCase();
     userGuesses = event.key
     
@@ -109,9 +109,45 @@ document.onkeyup = function (event)
     }
     else
     {
-        if(userGuesses[i] === wrongLetter[i] && userGuesses == wrongLetter)
+        if(userGuesses == wrongLetter)
             {
-                console.log("false");
+            console.log("false");
+            }
+        else if (userGuesses == wrongLetter[1])
+            {
+                console.log("falser");
+            }
+        else if (userGuesses == wrongLetter[2])
+            {
+                console.log("falser");
+            }
+        else if (userGuesses == wrongLetter[3])
+            {
+                console.log("falser");
+            }
+        else if (userGuesses == wrongLetter[4])
+            {
+                console.log("falser");
+            }
+        else if (userGuesses == wrongLetter[5])
+            {
+                console.log("falser");
+            }
+        else if (userGuesses == wrongLetter[6])
+            {
+                console.log("falser");
+            }
+        else if (userGuesses == wrongLetter[7])
+            {
+                console.log("falser");
+            }
+        else if (userGuesses == wrongLetter[8])
+            {
+                console.log("falser");
+            }
+        else if (userGuesses == wrongLetter[9])
+            {
+                console.log("falser");
             }
         else
         {
